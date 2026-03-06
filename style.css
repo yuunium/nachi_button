@@ -1,0 +1,36 @@
+body{
+  font-family:sans-serif;
+  padding:20px;
+  background:#f7f7f7;
+}
+
+h1{
+  margin-bottom:16px;
+}
+
+
+#buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+button{
+  display: inline-block;
+  padding: 5px 1em 5px;
+  text-decoration: none;
+  border-radius: 10px;
+  color: #000000;
+  background-image: linear-gradient(#ffffff 0%, #9affa4 100%);
+  box-shadow: 0px 2px 2px #0f301a;
+  border: solid 1px #0f301a;
+}
+
+button:active{
+  -webkit-transform: translateY(2px);
+  transform: translateY(2px);
+  box-shadow: 0px 0px 1px #0f301a;
+  border: solid 1px #0f301a;
+  padding-bottom: 3px;
+
+}
