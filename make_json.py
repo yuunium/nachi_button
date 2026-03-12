@@ -26,6 +26,7 @@ for file in mp3_files:
         name = file.rsplit(".", 1)[0]
 
         data.append(file)
+        
 
         added += 1
 

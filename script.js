@@ -1,5 +1,6 @@
 let currentAudio = null;
 let soundsData = [];
+let played = "";
 
 function katakanaToHiragana(text) {
   return text.replace(/[\u30a1-\u30f6]/g, (char) => {
@@ -22,10 +23,18 @@ function playSound(file) {
 
   const audio = new Audio("./sounds/" + file);
   audio.currentTime = 0;
+  played = file;
+  document.getElementById("played").textContent = "再生中: " + played.replace(/\.mp3$/i, "");
+
+
   audio.play().catch((error) => {
     console.error("audio play error:", error);
   });
 
+  audio.onended = () => {
+  document.getElementById("played").textContent = "再生済: " + played.replace(/\.mp3$/i, "");
+  }
+  
   currentAudio = audio;
 }
 

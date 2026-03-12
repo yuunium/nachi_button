@@ -1,18 +1,24 @@
 body{
   font-family:sans-serif;
-  padding:20px;
-  background:#f7f7f7;
+  padding:0;
+  margin:0 20px 0px;
+  background-image: url('./image/background.png');
+  background-size: contain;
+  touch-action: pan-y;
 }
 
-h1{
-  margin-bottom:16px;
+#title{
+  width : min(100%, 600px);
+  padding: 0;
+  margin:0 auto 0;
+  display: block;
+  
 }
-
 
 #buttons{
   display:flex;
   flex-wrap:wrap;
-  gap:10px;
+  gap:20px 10px;
 }
 
 button{
@@ -21,7 +27,7 @@ button{
   text-decoration: none;
   border-radius: 10px;
   color: #000000;
-  background-image: linear-gradient(#ffffff 0%, #9affa4 100%);
+  background-image: linear-gradient(#ffffff 0%, #d8ffce 100%);
   box-shadow: 0px 2px 2px #0f301a;
   border: solid 1px #0f301a;
 }
@@ -33,4 +39,35 @@ button:active{
   border: solid 1px #0f301a;
   padding-bottom: 3px;
 
+}
+
+#footer{
+  margin: 100px 0 0;
+  padding: 5px 20px 5px 0;
+  text-align: right;
+  font-size: 0.8em;
+  color: #000000;
+  background: #aaaaaa;
+  width : calc(100% + 80px);
+  position: relative;
+  left : -80px;
+}
+
+a{
+  color: #000000;
+}
+
+#played{
+  padding: 3px 20px 3px;
+  margin: 20px 0 0;
+  color: #ffffff;
+  font-weight: bold;
+  background-color: #fd91ff;
+  border-radius: 20px;
+
+  position: fixed;
+  bottom: 30px;
+  right: 10px;
+
+  z-index: 1000;
 }
