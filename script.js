@@ -24,17 +24,18 @@ function playSound(file) {
   const audio = new Audio("./sounds/" + file);
   audio.currentTime = 0;
   played = file;
-  document.getElementById("played").textContent = "再生中: " + played.replace(/\.mp3$/i, "");
-
+  document.getElementById("played").textContent =
+    "再生中: " + played.replace(/\.mp3$/i, "");
 
   audio.play().catch((error) => {
     console.error("audio play error:", error);
   });
 
   audio.onended = () => {
-  document.getElementById("played").textContent = "再生済: " + played.replace(/\.mp3$/i, "");
-  }
-  
+    document.getElementById("played").textContent =
+      "再生済: " + played.replace(/\.mp3$/i, "");
+  };
+
   currentAudio = audio;
 }
 
@@ -56,6 +57,10 @@ function renderButtons(list) {
 
 function showJsonOrder() {
   renderButtons(soundsData);
+}
+
+function showReverseJsonOrder() {
+  renderButtons([...soundsData].reverse());
 }
 
 function showKanaOrder() {
@@ -82,7 +87,7 @@ async function loadSounds() {
       throw new Error("sounds.json が配列ではない");
     }
 
-    renderButtons(soundsData);
+    renderButtons([...soundsData].reverse());
   } catch (error) {
     console.error("loadSounds error:", error);
   }
@@ -90,10 +95,15 @@ async function loadSounds() {
 
 function setupControls() {
   const jsonOrderButton = document.getElementById("jsonOrder");
+  const reverseJsonOrderButton = document.getElementById("reverseJsonOrder");
   const kanaOrderButton = document.getElementById("kanaOrder");
 
   if (jsonOrderButton) {
     jsonOrderButton.addEventListener("click", showJsonOrder);
+  }
+
+  if (reverseJsonOrderButton) {
+    reverseJsonOrderButton.addEventListener("click", showReverseJsonOrder);
   }
 
   if (kanaOrderButton) {
