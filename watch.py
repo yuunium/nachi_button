@@ -19,7 +19,7 @@ class Handler(FileSystemEventHandler):
         if now - last_run < 2:
             return
 
-        print("ファイル追加:", event.src_path)
+        print("ファイル追加:", (event.src_path)[8:])
 
         subprocess.run(["python3", "./make_json.py"])
 
