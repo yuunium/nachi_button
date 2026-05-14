@@ -113,3 +113,7 @@ function setupControls() {
 
 loadSounds();
 setupControls();
+
+function anniv() {
+  playSound("3anniv.mp3");
+}

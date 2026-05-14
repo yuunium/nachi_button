@@ -21,7 +21,7 @@
     <meta property="og:type" content="website">
     <meta property="og:image:width" content="1280">
     <meta property="og:image:height" content="670">
-    
+
     <!-- Twitter (X) -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="なちぼたん">
@@ -31,22 +31,21 @@
 </head>
 
 <body>
-    <h1><img id="title" src="./image/title.png" alt="タイトル画像（なちぼたんの文字）"></h1>
-    
+    <h1><button id="title_btn"><img id="title" src="./image/title_3anniv.png" alt="タイトル画像（なちぼたんの文字）" onclick="anniv()"></buttoni></h1>
     <div id="controls">
         <button id="kanaOrder">五十音順</button>
         <button id="jsonOrder">追加古い順</button>
         <button id="reverseJsonOrder">追加新しい順</button>
     </div>
     <br>
-    
-    <div id="buttons" ontouchstart=""></div>
+
+    <div id="buttons"></div>
     <span id="played">再生中:</span>
     <div id="footer">
         <a href="https://x.com/yuunium_KL" target="_blank">サイト運営X @yuunium_KL</a>
     </div>
-</body>
+    <script src="./script.js"></script>
 
-<script src="./script.js"></script>
+</body>
 
 </html>
